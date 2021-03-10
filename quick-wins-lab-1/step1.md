@@ -6,7 +6,7 @@ Start a single instance and call it ScyllaU:
 
 `docker run --name scyllaU -d scylladb/scylla:4.3.0`{{execute}}
 
-Some files will be downloaded in this step. After waiting for a few seconds, verify that the cluster is up and running with the Nodetool Status command:
+Some files will be downloaded in this step. After the download wait for a few seconds, and verify that the cluster is up and running with the Nodetool Status command:
 
 `docker exec -it scyllaU nodetool status`{{execute}}
 

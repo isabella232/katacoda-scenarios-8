@@ -2,15 +2,9 @@ After seeing how to run a single Scylla instance in the last step, and running t
 
 ## Task
 
-Start by making sure the node is  still up:
 
-`docker exec -it scyllaU nodetool status`{{execute}}
 
-Next, run a CQL shell:
-
-`docker exec -it scyllaU cqlsh`{{execute}}
-
-Create a keyspace called “mykeyspace”:
+You should be in CQL Shell after completing the previous step. Next, Create a keyspace called “mykeyspace”:
 
 `CREATE KEYSPACE mykeyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1};`{{execute}}
 
@@ -28,7 +22,7 @@ Insert two rows into the newly created table:
 
 `insert into users(user_id, fname, lname) values (4, 'rust', 'cohle');`{{execute}}
 
-Read the table contents:
+Now, read the table contents:
 
 `select * from users;`{{execute}}
 
