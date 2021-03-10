@@ -4,17 +4,17 @@ In production, a Scylla cluster should have at least three nodes in a cluster. I
 
 Start a single instance and call it ScyllaU:
 
-docker run --name scyllaU -d scylladb/scylla:4.3.0`{{execute}}
+`docker run --name scyllaU -d scylladb/scylla:4.3.0`{{execute}}
 
 Some files will be downloaded in this step. After waiting for a few seconds, verify that the cluster is up and running with the Nodetool Status command:
 
-docker exec -it scyllaU nodetool status`{{execute}}
+`docker exec -it scyllaU nodetool status`{{execute}}
 
 The node scyllaU has a UN status. “U” means up, and N means normal. Read more about Nodetool Status [here](https://docs.scylladb.com/operating-scylla/nodetool-commands/status/). If you run the command and the node is not up and running yet wait a few more seconds and run it again.
 
 Finally, we use the CQL Shell to interact with Scylla:
 
-docker exec -it scyllaU cqlsh`{{execute}}
+`docker exec -it scyllaU cqlsh`{{execute}}
 
 The CQL Shell allows us to run Cassandra Query Language commands on Scylla, as we will see in the next part.
 
