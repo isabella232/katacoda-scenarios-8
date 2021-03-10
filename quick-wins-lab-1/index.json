@@ -2,21 +2,17 @@
   "title": "Lab 1: Install and Start Scylla",
   "description": "Quickly start Scylla by running a single instance using Docker",
   "difficulty": "Beginner",
-  "time": "6",
+  "time": "14 minutes",
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Step 1 Install and Start Scylla",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Step 2 Basic CQL Operations",
         "text": "step2.md"
       },
-      {
-        "title": "Step 3",
-        "text": "step3.md"
-      }
     ],
     "intro": {
       "text": "intro.md"
