@@ -16,6 +16,8 @@ Finally, we use the CQL Shell to interact with Scylla:
 
 `docker exec -it scyllaU cqlsh`{{execute}}
 
+Notice that if you run cqlsh before the cluster is ready you'll get a connection error. In that case wait for a few more seconds until the cluster is up and try again.
+
 The CQL Shell allows us to run Cassandra Query Language commands on Scylla, as we will see in the next part.
 
 
