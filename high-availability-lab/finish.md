@@ -1,0 +1,2 @@
+To summarize you saw what happens when some of the nodes are down in our three node cluster and RF=3, and with different Consistency Levels. CL = ALL will provide higher consistency, while CL = 1 will provide higher availability. 
+In the next lesson you will take a closer look at the Scylla architecture. 
