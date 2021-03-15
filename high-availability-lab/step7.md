@@ -2,7 +2,8 @@ In the previous step you used, CL = ALL, and one node was down. Since RF=3, thre
 
 What happens if another node is down? and we use a Consistency Level of Quorum?
 
-## CL=QUORUM, Two Nodes Are Down
+## Read and Write Data 
+
 
 
 Take down Node_Z and check the status:

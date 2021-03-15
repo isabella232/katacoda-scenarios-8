@@ -1,6 +1,7 @@
 In the previous step we saw that with CL = QUORUM, and one node down, the read and write were successful. What will happen with CL = ALL? 
 
-## CL=ALL, One Node is Down
+## Read and Write Data 
+
 
 Set the Consistency Level to ALL and try to read and write data:
 

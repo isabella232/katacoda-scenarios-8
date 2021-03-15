@@ -6,12 +6,36 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1: Overview and Setup",
+        "title": "Create the Cluster",
         "text": "step1.md"
       },
       {
-        "title": "Step 2: Read and Write at Different Consistency Levels",
+        "title": "Default CL",
         "text": "step2.md"
+      },
+      {
+        "title": "CL=QUORUM, All Nodes Are Up",
+        "text": "step3.md"
+      },
+      {
+        "title": "CL=ALL, All Nodes Are Up",
+        "text": "step4.md"
+      },
+      {
+        "title": "CL=QUORUM, One Node is Down",
+        "text": "step5.md"
+      },
+      {
+        "title": "CL=ALL, One Node is Down",
+        "text": "step6.md"
+      },
+      {
+        "title": "CL=QUORUM, Two Nodes Are Down",
+        "text": "step7.md"
+      },
+      {
+        "title": "CL=ONE, Two Nodes Are Down",
+        "text": "step8.md"
       }
     ],
     "intro": {

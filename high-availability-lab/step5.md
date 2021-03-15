@@ -1,6 +1,7 @@
 Next we’ll take one node down and check read and write operations with a Consistency Level of Quorum.
 
-## CL=QUORUM, One Node is Down
+## Read and Write Data 
+
 
 Exit the CQL Shell and take down Node_Y and check the status (it might take some time until the node is actually down): 
 

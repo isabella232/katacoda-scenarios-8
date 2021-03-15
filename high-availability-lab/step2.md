@@ -22,4 +22,8 @@ Read the table contents:
 
 `select * from users;`{{execute}}
 
-You just saw how to create a three-node cluster with RF=3, how to open a CQL Shell, create a table, insert data into it, and read the data. Next, you will see what happens when nodes are down and how the Consistency Level impacts the read/write operations.
+You just saw how to create a three-node cluster with RF=3, how to open a CQL Shell, create a table, insert data into it, and read the data. 
+
+Unless otherwise defined, the Consistency Level defaults to ONE. So, in our case all the nodes are up and CL=ONE, therefore the operations succeed.
+ 
+Next, you will see what happens when nodes are down and how the Consistency Level impacts the read/write operations.

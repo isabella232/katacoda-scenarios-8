@@ -1,6 +1,6 @@
 What happens if we set the Consistency Level to ALL?
 
-## CL=ALL, All Nodes Are Up
+## Read and Write Data 
 
 
 Set the Consistency Level to ALL and perform a write:

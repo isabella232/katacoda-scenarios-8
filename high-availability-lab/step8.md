@@ -1,6 +1,7 @@
 Now that you saw that with CL=QUORUM and two nodes down, read/write fails, let's see what happens with CL = ONE? 
 
-## CL=ONE, Two Nodes Are Down
+## Read and Write Data 
+
 
 Set the Consistency Level to ONE and try to read/write data:
 
