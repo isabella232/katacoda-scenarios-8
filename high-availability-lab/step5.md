@@ -5,25 +5,25 @@ Next we’ll take one node down and check read and write operations with a Consi
 
 Exit the CQL Shell and take down Node_Y and check the status (it might take some time until the node is actually down): 
 
-exit
+`exit`{{execute}}
 
-docker stop Node_Y 
+`docker stop Node_Y`{{execute}}
 
-docker exec -it Node_Z nodetool status 
+`docker exec -it Node_Z nodetool status`{{execute}} 
 
 Now, set the Consistency Level to QUORUM and perform a write: 
 
-docker exec -it Node_Z cqlsh 
+`docker exec -it Node_Z cqlsh`{{execute}} 
 
-CONSISTENCY QUORUM 
+`CONSISTENCY QUORUM`{{execute}} 
 
-use mykeyspace;
+`use mykeyspace;`{{execute}}
 
-insert into users (user_id, fname, lname) values (9, 'avon', 'barksdale');  
+`insert into users (user_id, fname, lname) values (9, 'avon', 'barksdale');`{{execute}} 
 
 Read the data to see the insert was successful: 
 
-select * from users; 
+`select * from users;`{{execute}} 
 
 With CL = QUORUM, the read and write were successful. 
 

@@ -4,15 +4,15 @@ After you saw how to create a three node cluster, open a CQL Shell to a node in 
 
 Set the Consistency Level to QUORUM and perform a write:
 
-use mykeyspace; 
+`use mykeyspace;`{{execute}} 
 
-CONSISTENCY QUORUM 
+`CONSISTENCY QUORUM`{{execute}} 
 
-insert into users (user_id, fname, lname) values (7, 'eric', 'cartman');  
+`insert into users (user_id, fname, lname) values (7, 'eric', 'cartman');`{{execute}}  
 
 Read the data to see the insert was successful:
 
-select * from users; 
+`select * from users;`{{execute}} 
 
 Note that regardless of the Consistency Level, a write is always sent to all replicas, as set by the Replication Factor. Consistency Level controls when a client acknowledges an operation, not how many replicas are updated.
 
