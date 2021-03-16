@@ -11,20 +11,22 @@ In this part, you’ll bring up a three-node cluster.
 
 First, you'll bring up a three-node Scylla cluster using Docker. Sstart with one node, called Node_X:
 
-`docker run --name Node_X -d scylladb/scylla:4.3.0`{{execute}}
+`docker run --name Node_X -d scylladb/scylla:4.3.0 --overprovisioned --smp 1`{{execute}}
+
+You can learn more about best practices for running Scylla on Docker [here](https://docs.scylladb.com/operating-scylla/procedures/tips/best_practices_scylla_on_docker/).
  
 Create two more nodes, Node_Y and Node_Z, and add them to the cluster of Node_X. The command “$(docker inspect –format='{{ .NetworkSettings.IPAddress }}’ Node_X)” translates to the IP address of Node-X: 
  
-` docker run --name Node_Y -d scylladb/scylla:4.3.0 --seeds="$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' Node_X)"`{{execute}} 
+` docker run --name Node_Y -d scylladb/scylla:4.3.0 --overprovisioned --smp 1 --seeds="$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' Node_X)"`{{execute}} 
  
  
-`docker run --name Node_Z -d scylladb/scylla:4.3.0 --seeds="$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' Node_X)"`{{execute}} 
+`docker run --name Node_Z -d scylladb/scylla:4.3.0 --overprovisioned --smp 1 --seeds="$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' Node_X)"`{{execute}} 
 
 Wait a minute or so and check the node status: 
 
-`docker exec -it Node_Z nodetool status`{{execute}}  
+`docker exec -it Node_X nodetool status`{{execute}}  
 
-You’ll see that eventually, all the nodes have UN for status. U means up, and N means normal.
+You’ll see that eventually, all the nodes have UN for status. U means up, and N means normal. If you get a message "nodetool: Unable to connect to Scylla API server: java.net.ConnectException: Connection refused (Connection refused)", it means you have to wait a bit more for the node to be up and responding. 
 
 You can read more about Nodetool Status [here](https://docs.scylladb.com/operating-scylla/nodetool-commands/status/).
 
