@@ -1,4 +1,4 @@
-What happens if we set the Consistency Level to ALL?
+What happens if we set the Consistency Level to ALL (CL=ALL)?
 
 ## Read and Write Data 
 

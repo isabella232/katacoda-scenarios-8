@@ -1,4 +1,4 @@
-In the previous step you used, CL = ALL, and one node was down. Since RF=3, three nodes had to be up for the read/write to succeed.
+In the previous step you used, CL=ALL, and one node was down. Since RF=3, three nodes had to be up for the read/write to succeed.
 
 What happens if another node is down? and we use a Consistency Level of Quorum?
 
@@ -25,5 +25,5 @@ Now, set the Consistency Level to QUORUM and perform a read and a write:
 
 `select * from users;`{{execute}} 
 
-With CL = QUORUM, the read and write fail. Since RF=3, QUORUM means at least two nodes need to be up, in our case just one is. 
+With CL=QUORUM, the read and write fail. Since RF=3, QUORUM means at least two nodes need to be up, in our case just one is. 
 

@@ -1,4 +1,4 @@
-Next we’ll take one node down and check read and write operations with a Consistency Level of Quorum.
+Next we’ll take one node down and check read and write operations with a Consistency Level of Quorum (CL=QUORUM).
 
 ## Read and Write Data 
 
@@ -25,5 +25,5 @@ Read the data to see the insert was successful:
 
 `select * from users;`{{execute}} 
 
-With CL = QUORUM, the read and write were successful. 
+With CL=QUORUM, the read and write were successful. 
 

@@ -38,5 +38,5 @@ Once the nodes are up, and the cluster is set, we can use the CQL shell to creat
 
 Run a CQL shell: 
 
-`docker exec -it Node_Z cqlsh`{{execute}} 
+`docker exec -it Node_X cqlsh`{{execute}} 
 

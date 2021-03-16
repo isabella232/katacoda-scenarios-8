@@ -4,8 +4,6 @@ After you saw how to create a three node cluster, open a CQL Shell to a node in 
 
 Set the Consistency Level to QUORUM and perform a write:
 
-`use mykeyspace;`{{execute}} 
-
 `CONSISTENCY QUORUM`{{execute}} 
 
 `insert into users (user_id, fname, lname) values (7, 'eric', 'cartman');`{{execute}}  
