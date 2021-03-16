@@ -5,7 +5,7 @@ In production, a Scylla cluster should have at least three nodes in a cluster. I
 
 Start a single instance and call it ScyllaU:
 
-`docker run --name scyllaU -d scylladb/scylla:4.3.0 --overprovisioned --smp 1`{{execute}}
+`docker run --name scyllaU -d scylladb/scylla:4.3.0 --overprovisioned 1 --smp 1`{{execute}}
 
 Notice that when running Scylla on Docker and in scenarios in which static partitioning is not desired - like mostly-idle cluster without hard latency requirements, the --overprovisioned command-line option is recommended. This enables certain optimizations for Scylla to run efficiently in an overprovisioned environment.
 
