@@ -11,7 +11,7 @@ In this part, you’ll bring up a three-node cluster.
 
 ## Create a Three-Node Cluster, CQLSH
 
-First, you'll bring up a three-node Scylla cluster using Docker. Sstart with one node, called Node_X:
+First, you'll bring up a three-node Scylla cluster using Docker. Start with one node, called Node_X:
 
 `docker run --name Node_X -d scylladb/scylla:4.3.0 --overprovisioned 1 --smp 1`{{execute}}
 
