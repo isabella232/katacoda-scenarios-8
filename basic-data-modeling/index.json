@@ -1,8 +1,8 @@
 {
-  "title": "Quick Wins: Install and Start Scylla Lab",
-  "description": "Quickly start Scylla by running a single instance using Docker",
+  "title": "Basic Data Modeling Lab",
+  "description": "Learn the basics of data modeling and basic concepts, the importance of the primary key selection and perform related queries",
   "difficulty": "Beginner",
-  "time": "6 minutes",
+  "time": "14 minutes",
   "details": {
     "steps": [
       {
