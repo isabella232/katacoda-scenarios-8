@@ -6,7 +6,7 @@
   "details": {
     "steps": [
       {
-        "title": "Install and Start Scylla",
+        "title": "Setup and Simple Primary Key",
         "text": "step1.md"
       },
       {

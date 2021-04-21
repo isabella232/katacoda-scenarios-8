@@ -1,10 +1,10 @@
-As we saw in the previous labs, we'll start by creating a single node Scylla cluster, a keyspace, and a table. Then, we'll execute some queries and see what effect our primary key selection has. 
+Similarly to what we saw the previous labs, we'll start by creating a single node Scylla cluster, a keyspace, and a table. Then, we'll execute some queries and see what effect our primary key selection has. A reminder, the Primary Key is defined within a table. It is one or more columns used to identify a row. All tables must include a definition for a Primary Key.
 
 
 
 ## Create a Scylla Cluster and Simple Primary Key
 
-To recap the lesson, a cluster is a collection of nodes that Scylla uses to store the data. The nodes are logically distributed like a ring. A minimum production cluster typically consists of at least three nodes. Data is automatically replicated across the cluster, depending on the Replication Factor. This cluster is often referred to as a ring architecture, based on a hash ring — the way the cluster knows how to distribute data across the different nodes.
+To recap the [lesson](https://university.scylladb.com/courses/data-modeling/lessons/basic-data-modeling-2/), a cluster is a collection of nodes that Scylla uses to store the data. The nodes are logically distributed like a ring. A minimum production cluster typically consists of at least three nodes. Data is automatically replicated across the cluster, depending on the Replication Factor. This cluster is often referred to as a ring architecture, based on a hash ring — the way the cluster knows how to distribute data across the different nodes.
 For this demo, a one node cluster is sufficient. 
 Start a single node cluster and call it ScyllaU:
 
@@ -28,7 +28,7 @@ If you missed the previous labs, you can learn more about getting started with S
 A Keyspace is a top-level container that stores tables with attributes that define how data is replicated on nodes. It defines several of options that apply to all the tables it contains, the most important of which is the replication strategy used by the Keyspace. A keyspace is comparable to the concept of a Database Schema in the relational world.  Since the keyspace defines the replication factor of all underlying tables, if we have tables that require different replication factors, we would store them in different keyspaces.
 Create a keyspace and call it key_example:
 
-`CREATE KEYSPACE key_example WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy','DC1' : 3};`{{execute}}
+`CREATE KEYSPACE key_example WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy','DC1' : 1};`{{execute}}
 
 `use key_example;`{{execute}}
 
