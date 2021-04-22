@@ -10,6 +10,11 @@ Start a single node cluster and call it ScyllaU:
 
 `docker run --name scyllaU -d scylladb/scylla:4.3.0 --overprovisioned 1 --smp 1`{{execute}}
 
+` docker run --name scyllaY -d scylladb/scylla:4.3.0 --overprovisioned 1 --smp 1 --seeds="$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' scyllaU)"`{{execute}} 
+ 
+`docker run --name scyllaZ -d scylladb/scylla:4.3.0 --overprovisioned 1 --smp 1 --seeds="$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' scyllaU)"`{{execute}} 
+
+
 As we previously saw, some files will be downloaded in this step. After the download, wait for a minute or two and verify that the cluster is up and running with the Nodetool Status command:
 
 `docker exec -it scyllaU nodetool status`{{execute}}
@@ -28,7 +33,7 @@ If you missed the previous labs, you can learn more about getting started with S
 A Keyspace is a top-level container that stores tables with attributes that define how data is replicated on nodes. It defines several of options that apply to all the tables it contains, the most important of which is the replication strategy used by the Keyspace. A keyspace is comparable to the concept of a Database Schema in the relational world.  Since the keyspace defines the replication factor of all underlying tables, if we have tables that require different replication factors, we would store them in different keyspaces.
 Create a keyspace and call it key_example:
 
-`CREATE KEYSPACE key_example WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy','DC1' : 1};`{{execute}}
+`CREATE KEYSPACE key_example WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy','DC1' : 3};`{{execute}}
 
 `use key_example;`{{execute}}
 
