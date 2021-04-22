@@ -8,7 +8,7 @@ Let's create a new table heartrate_v6:
    time timestamp,
    heart_rate int,
    PRIMARY KEY (pet_chip_id)
-)`{{execute}}
+);`{{execute}}
 
 Insert some data:
 
@@ -23,7 +23,7 @@ As we only defined the pet_chip_id as the Primary Key (which in this case is als
 Let’s see what happens when we query with and without the partition key in terms of performance:
 
 
-`SELECT * FROM heartrate_v1 WHERE time='2011-02-03 04:05:10';`{{execute}}
+`SELECT * FROM heartrate_v6 WHERE time='2011-02-03 04:05:10';`{{execute}}
 
 We get an error message.
 
@@ -39,12 +39,12 @@ This query runs fast and returns the answer almost immediately, as we specified 
 
 If we wanted to query for the pet’s heart rate by pet_chip_id and time? We could then define the table as follows:
 
-CREATE TABLE heartrate_v7 (
+`CREATE TABLE heartrate_v7 (
    pet_chip_id uuid,
    time timestamp,
    heart_rate int,
    PRIMARY KEY (pet_chip_id, time)
-);
+);`{{execute}}
 
 In this case, the partition key is the pet_chip_id, and the clustering key is the time. Each pet_chip_id (the partition key) would be a partition, that is, existing on a single node. Within that partition, the data would be stored according to the clustering key, which is “time.”
 
@@ -62,7 +62,7 @@ Since a Partition Key and a Clustering Key are defined, each partition would pos
 
 Now it would be very efficient to query what was the heart rate of a specific pet at a given time (or time interval):
 
-`SELECT * from heartrate_v7 WHERE pet_chip_id = 123e4567-e89b-12d3-a456-426655440b23 AND time >='2019-03-04 07:01:00' AND time <='2019-03-04 07:02:00';`{{execute}}
+`SELECT * from heartrate_v7 WHERE pet_chip_id = fead97e9-4d77-40c9-ba15-c45478542e20 AND time >='2010-03-04 07:01:00' AND time <='2012-03-04 07:02:00';`{{execute}}
 
 So what happens here:
 

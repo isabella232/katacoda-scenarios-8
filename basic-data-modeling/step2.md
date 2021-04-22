@@ -43,7 +43,7 @@ This also solves the problem we saw with the table heartrate_v1. Now each pet ca
 
 Read the data for the same pet, to see that it wasn't overwritten this time:
 
-`SELECT * from heartrate_v2 WHERE pet_chip_id = 123e4567-e89b-12d3-a456-426655440b23`{{execute}} 
+`SELECT * from heartrate_v2 WHERE pet_chip_id = 123e4567-e89b-12d3-a456-426655440b23;`{{execute}} 
 
 both the Partition Key and the Clustering Key can include more than one column, so we can define the following table 
 
@@ -79,11 +79,4 @@ INSERT INTO heartrate_v4(pet_chip_id, time, heart_rate, pet_name) VALUES (123e45
 SELECT * from heartrate_v4 WHERE pet_chip_id = 123e4567-e89b-12d3-a456-426655440b23 AND pet_name = 'Duke' AND heart_rate = 90;
 
 We insert some data and query according to the partition key and clustering key, in the correct order, so it works. 
-
-
-
-
-
-`CREATE KEYSPACE mykeyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1};`{{execute}}
-
 
