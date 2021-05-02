@@ -29,7 +29,7 @@ We get an error message.
 
 Since no partition key is specified, this query would perform a full cluster scan. This is slow and inefficient.
 
-If we use any SELECT query without including the partition key, we’re going to be doing a full cluster scan. This is blocked by default. [Allow Filtering](https://docs.scylladb.com/getting-started/dml/#allowing-filtering) bypasses Scylla restrictions on inefficient scans which can potentially create a significant load on the system. It’s easy to see why this is very inefficient and slow. Think of a production cluster with many nodes and with billions of rows.
+If we use any SELECT query without including the partition key, we’re going to be doing a full cluster scan. This is blocked by default. [Allow Filtering](https://docs.scylladb.com/getting-started/dml/#allowing-filtering) bypasses Scylla restrictions on inefficient scans, which can potentially create a significant load on the system. It’s easy to see why this is very inefficient and slow. Think of a production cluster with many nodes and with billions of rows.
 
 To solve this, we can either define the table to include the time field as the clustering key, as we saw in a previous step. Another solution would be to include the partition key in the query:
 
@@ -66,9 +66,9 @@ Now it would be very efficient to query what was the heart rate of a specific pe
 
 So what happens here:
 
-The partition key (pet_chip_id) tells us exactly in which node our data is stored. So we’d know where in the cluster we can find our data. Now, In that partition, since the data is ordered according to the time, we could very quickly scan to the given time interval (the clustering key) and return the records.
+The partition key (pet_chip_id) tells us precisely in which node our data is stored. So we’d know where in the cluster we can find our data. Now, In that partition, since the data is ordered according to the time, we could very quickly scan to the given time interval (the clustering key) and return the records.
 
-When choosing a partition key we want to aim for:
+When choosing a partition key, we want to aim for:
 
 * High Cardinality, meaning that the range of values are mostly unique 
 * Even Distribution of the data
@@ -77,9 +77,9 @@ And we'd like to avoid:
 
 * Low Cardinality
 * Hot Partition, a situation where some nodes are accessed very often while others are idle
-* Large Partition, where some partition are very large while others are small
+* Large Partition, where some partitions are very large while others are small
 
-Examples of good partition keys:
+Examples of suitable partition keys:
 
 * User Name
 * User ID
@@ -89,7 +89,7 @@ Examples of good partition keys:
 * Customer
 
 
-And ones that are likely to be bad: 
+And ones that are likely to be inadequate: 
 
 * State
 * Age

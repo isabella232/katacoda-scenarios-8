@@ -1,4 +1,4 @@
-Now that you know how to create a table with a partition key and a clustering key, let's dive in more complex examples and what it means to have multiple columns in our Primary Key. 
+Now that you know how to create a table with a partition key and a clustering key, let's dive into more complex examples and what it means to have multiple columns in our Primary Key. 
 
 ## Multiple-column Primary Keys
 
@@ -43,7 +43,7 @@ We can now query according to the clustering key columns: pet_name and heart_rat
 
 * If there is more than one column in the Clustering Key (pet_name and heart_rate in the example above), the order of these columns defines the clustering order. For a given partition, all the rows are physically ordered inside Scylla by the clustering order. This order determines what select query you can efficiently run on this partition.
 * In this example, the ordering is first by pet_name and then by heart_rate.
-* In addition to the Partition Key columns, a query may include the Clustering Key. If it does include the Clustering Key columns they must be used in the same order as they were defined.
+* In addition to the Partition Key columns, a query may include the Clustering Key. If it does include the Clustering Key columns, they must be used in the same order as they were defined.
 
 
 

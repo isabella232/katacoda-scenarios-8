@@ -1,8 +1,8 @@
-After we saw how to use multiple column partition and clustering keys, let's see what happens if we want to use different sorting orders. 
+After seeing how to use multiple column partition and clustering keys, let's see what happens if we want to use different sorting orders. 
 
 ## Clustering Key Sorting Order
 
-By default, sorting is based on the natural order of the clustering columns. If as we previously saw, the clustering key is the "time" column, the rows would be sorted by ascending order. 
+By default, sorting is based on the natural order of the clustering columns. If, as we previously saw, the clustering key is the "time" column, the rows would be sorted by ascending order. 
 What if our query is to find the heart rate by pet_chip_id and time, but that we want to look at the ten most recent records?
 In that case, we can reverse the order:
 
@@ -26,7 +26,7 @@ And we can efficiently read the latest three rows for that pet_chip_id:
 
 `SELECT * from heartrate_v5 WHERE pet_chip_id = 123e4567-e89b-12d3-a456-426655440b23 LIMIT 3;`{{execute}}
 
-If the order was ascending (as it is by default) instead of descending, we'd have to do a full scan to get to the last 3 rows. 
+If the order was ascending (as it is by default) instead of descending, we'd have to do a full scan to get to the last three rows. 
 
 
   

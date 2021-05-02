@@ -1,4 +1,4 @@
-After seeing what happens when we read and write data from table with a simple Primary key, let's see what a compound or composite Primary key is and why it matters. 
+After seeing what happens when we read and write data from a table with a simple Primary key, let's see what a compound (or composite) Primary key is and why it matters. 
 
 ## Compound/Composite Primary Key and Clustering Key
 
@@ -25,7 +25,7 @@ INSERT INTO heartrate_v2(pet_chip_id, time, heart_rate) VALUES (123e4567-e89b-12
 INSERT INTO heartrate_v2(pet_chip_id, time, heart_rate) VALUES (123e4567-e89b-12d3-a456-426655440b23, '2019-03-04 07:01:50', 96); 
 INSERT INTO heartrate_v2(pet_chip_id, time, heart_rate) VALUES (123e4567-e89b-12d3-a456-426655440b23, '2019-04-04 07:01:50', 99);`{{execute}} 
 
-In such a case the first part of the Primary Key is called the Partition Key (pet_chip_id in the above example) and the second part is called the Clustering Key (time).
+In such a case, the first part of the Primary Key is called the Partition Key (pet_chip_id in the above example), and the second part is called the Clustering Key (time).
 
 A Primary Key is composed of 2 parts:
 
@@ -39,7 +39,7 @@ A Primary Key is composed of 2 parts:
 Now we can query according to the time:
 `SELECT * from heartrate_v2 WHERE pet_chip_id = 123e4567-e89b-12d3-a456-426655440b23 AND time >='2019-03-04 07:01:00' AND time <='2019-03-04 07:02:00';`{{execute}}
 
-This also solves the problem we saw with the table heartrate_v1. Now each pet can have a different heart rate written for each time period. This makes more sense and goes back to the first step in data modeling, which is thinking about which queries will be performed and taking that into account when creating the data model.
+This also solves the problem we saw with the table heartrate_v1. Now each pet can have a different heart rate written for each period. This makes more sense and goes back to the first step in data modeling, thinking about which queries will be performed and taking that into account when creating the data model.
 
 Read the data for the same pet, to see that it wasn't overwritten this time:
 

@@ -1,11 +1,11 @@
-Similarly to what we saw the previous labs, we'll start by creating a single node Scylla cluster, a keyspace, and a table. Then, we'll execute some queries and see what effect our primary key selection has. A reminder, the Primary Key is defined within a table. It is one or more columns used to identify a row. All tables must include a definition for a Primary Key.
+Similar to what we saw in the previous labs, we'll start by creating a single node Scylla cluster, a keyspace, and a table. Then, we'll execute some queries and see what effect our primary key selection has. As a reminder, the Primary Key is defined within a table. It is one or more columns used to identify a row. All tables must include a definition for a Primary Key.
 
 
 
 ## Create a Scylla Cluster and Simple Primary Key
 
 To recap the [lesson](https://university.scylladb.com/courses/data-modeling/lessons/basic-data-modeling-2/), a cluster is a collection of nodes that Scylla uses to store the data. The nodes are logically distributed like a ring. A minimum production cluster typically consists of at least three nodes. Data is automatically replicated across the cluster, depending on the Replication Factor. This cluster is often referred to as a ring architecture, based on a hash ring — the way the cluster knows how to distribute data across the different nodes.
-For this demo, a one node cluster is sufficient. 
+For this demo, a one-node cluster is sufficient. 
 Start a single node cluster and call it ScyllaU:
 
 `docker run --name scyllaU -d scylladb/scylla:4.3.0 --overprovisioned 1 --smp 1`{{execute}}
@@ -30,7 +30,7 @@ Notice that if you run cqlsh before the cluster is ready, you'll get a connectio
 If you missed the previous labs, you can learn more about getting started with Scylla in the [documentation](https://docs.scylladb.com/getting-started/). 
 
 
-A Keyspace is a top-level container that stores tables with attributes that define how data is replicated on nodes. It defines several of options that apply to all the tables it contains, the most important of which is the replication strategy used by the Keyspace. A keyspace is comparable to the concept of a Database Schema in the relational world.  Since the keyspace defines the replication factor of all underlying tables, if we have tables that require different replication factors, we would store them in different keyspaces.
+A Keyspace is a top-level container that stores tables with attributes that define how data is replicated on nodes. It defines several options that apply to all the tables it contains, the most important of which is the replication strategy used by the Keyspace. A keyspace is comparable to the concept of a Database Schema in the relational world.  Since the keyspace defines the replication factor of all underlying tables, if we have tables that require different replication factors, we would store them in different keyspaces.
 Create a keyspace and call it key_example:
 
 `CREATE KEYSPACE key_example WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy', 'replication_factor' : 3};`{{execute}}
@@ -38,7 +38,7 @@ Create a keyspace and call it key_example:
 `use key_example;`{{execute}}
 
 A Table is how Scylla stores data and can be thought of as a set of rows and columns.
-Next, create a simple table with the  pet_chip_id column as the primary key 
+Next, create a simple table with the  pet_chip_id column as the primary key:
 
 `CREATE TABLE heartrate_v1 (
    pet_chip_id uuid,
@@ -47,7 +47,7 @@ Next, create a simple table with the  pet_chip_id column as the primary key
    PRIMARY KEY (pet_chip_id)
 );`{{execute}}
 
-A Partition is a collection of sorted rows identified by a unique primary key. More on primary keys later on in this session. Each partition is stored on a node and replicated across nodes.
+A Partition is a collection of sorted rows identified by a unique primary key. Primary keys are covered in depth later on in this session. Each partition is stored on a node and replicated across nodes.
 
 A Row in Scylla is a unit that stores data. Each row has a primary key that uniquely identifies it in a Table. Each row stores data as pairs of column names and values. In case a Clustering Key is defined, the rows in the partition will be sorted accordingly. More on that later on. 
 

@@ -1,6 +1,6 @@
 {
   "title": "Basic Data Modeling Lab",
-  "description": "Learn the basics of data modeling and basic concepts, the importance of the primary key selection and perform related queries",
+  "description": "Learn the basics of data modeling and key concepts, the importance of the primary key, and perform related queries",
   "difficulty": "Beginner",
   "time": "14 minutes",
   "details": {
@@ -10,19 +10,19 @@
         "text": "step1.md"
       },
       {
-        "title": "Basic CQL Operations",
+        "title": "Primary Key and Clustering Key",
         "text": "step2.md"
       },
       {
-        "title": "Setup and Simple Primary Key",
+        "title": "Advanced Examples",
         "text": "step3.md"
       },
       {
-        "title": "Setup and Simple Primary Key",
+        "title": "Sorting Order",
         "text": "step4.md"
       },
       {
-        "title": "Setup and Simple Primary Key",
+        "title": "Key Selection ",
         "text": "step5.md"
       }
     ],
