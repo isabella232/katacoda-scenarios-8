@@ -11,6 +11,7 @@ What happens if we want to query our data by pet_chip_id but also by time? That 
 Try the above query. It fails. We can define the Primary Key to include more than one column, in which case it is called a Composite or Compound key.
 
 Let’s create the following table:
+
 `CREATE TABLE heartrate_v2 (
    pet_chip_id uuid,
    time timestamp,
@@ -37,6 +38,7 @@ A Primary Key is composed of 2 parts:
 
 
 Now we can query according to the time:
+
 `SELECT * from heartrate_v2 WHERE pet_chip_id = 123e4567-e89b-12d3-a456-426655440b23 AND time >='2019-03-04 07:01:00' AND time <='2019-03-04 07:02:00';`{{execute}}
 
 This also solves the problem we saw with the table heartrate_v1. Now each pet can have a different heart rate written for each period. This makes more sense and goes back to the first step in data modeling, thinking about which queries will be performed and taking that into account when creating the data model.

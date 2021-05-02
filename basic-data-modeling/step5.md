@@ -33,7 +33,7 @@ If we use any SELECT query without including the partition key, we’re going to
 
 To solve this, we can either define the table to include the time field as the clustering key, as we saw in a previous step. Another solution would be to include the partition key in the query:
 
-`SELECT * FROM heartrate_v1 WHERE pet_chip_id = 268e074a-a801-476c-8db5-276eb2283b03;`{{execute}}
+`SELECT * FROM heartrate_v6 WHERE pet_chip_id = 268e074a-a801-476c-8db5-276eb2283b03;`{{execute}}
 
 This query runs fast and returns the answer almost immediately, as we specified the partition key. Scylla knows exactly which node contains the data by hashing the ID (which is the partition key). This is quick and efficient.
 
