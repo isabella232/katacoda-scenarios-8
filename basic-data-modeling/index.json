@@ -27,8 +27,7 @@
       }
     ],
     "intro": {
-      "courseData": "docker-pull.sh",
-      "text": "intro.md"
+:      "text": "intro.md"
     },
     "finish": {
       "text": "finish.md"
