@@ -1,5 +1,5 @@
 {
-  "title": "Quick Wins: Install and Start Scylla Lab",
+  "title": "ScyllaDB: Quick Wins: Install and Start Scylla Lab",
   "description": "Quickly start Scylla by running a single instance using Docker",
   "difficulty": "Beginner",
   "time": "6 minutes",
