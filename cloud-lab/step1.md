@@ -7,12 +7,14 @@ A [Cluster](https://university.scylladb.com/courses/scylla-essentials-overview/l
 
 Once you’re in, click on Add New Cluster. 
 
+![](https://university.scylladb.com/wp-content/uploads/2021/06/add_cluster.png)
+
 Leave the default options as they are. Enter “test-cluster” for the cluster name and click Launch Cluster. This will start a three-node cluster that you will use for this lab. 
 Notice that if you’re a new user, you can use the free trial. 
 
 Wait until the cluster is ready. 
 
-Next, you’ll connect to it. 
+Next, you’ll connect to it. Click on Connect.
 
 It’s also possible to use your own AWS account with Scylla Cloud using the Scylla Cloud Bring Your Own Account (BYOA) feature, learn more about it [here](https://docs.scylladb.com/scylla-cloud/cloud-setup/scylla-cloud-byoa/). 
 
