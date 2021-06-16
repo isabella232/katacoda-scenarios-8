@@ -5,6 +5,8 @@ The CQL Shell is an interactive Command Line Interface to interact with the data
 
 Keep in mind that most real-world applications use drivers to interact with the cluster, you can learn more about using Scylla Drivers in [this course](https://university.scylladb.com/courses/using-scylla-drivers/). 
 
+![](https://university.scylladb.com/wp-content/uploads/2021/06/cluster_connect.png)
+
 
 ## Connect to the Cluster
 
