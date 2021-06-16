@@ -8,9 +8,9 @@ Keep in mind that most real-world applications use drivers to interact with the 
 
 ## Connect to the Cluster
 
-Copy the password from the instructions tab and run the following command with the password you copied::
+Copy the password and IP address from the instructions tab and run the following command with the password and IP address you copied::
 
-`docker run -it --rm --entrypoint cqlsh scylladb/scylla -u scylla -p *************** 44.193.147.54`{{execute}}
+`docker run -it --rm --entrypoint cqlsh scylladb/scylla -u scylla -p *************** 44.193.147.54`{{copy}}
 
 Next, create a Keyspace called mykeyspace:
 `CREATE KEYSPACE mykeyspace WITH replication = {'class': 'NetworkTopologyStrategy', 'AWS_US_EAST_1' : 3} AND durable_writes = true;`{{execute}}

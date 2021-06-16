@@ -3,7 +3,7 @@ A [Cluster](https://university.scylladb.com/courses/scylla-essentials-overview/l
 
 ## Create a Scylla Cluster
 
-[Sign in](https://cloud.scylladb.com/user/signin) if you already have a user. Otherwise, [create](https://cloud.scylladb.com/user/signin) one. 
+[Sign in](https://cloud.scylladb.com/user/signin) to Scylla Cloud if you already have a user. Otherwise, [create](https://cloud.scylladb.com/user/signup) one. 
 
 Once you’re in, click on Add New Cluster. 
 
