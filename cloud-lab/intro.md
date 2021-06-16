@@ -1,4 +1,4 @@
-[Scylla Cloud](https://cloud.scylladb.com/) is a managed NoSQL database as a service running [Scylla Enterprise](https://cloud.scylladb.com/).
+[Scylla Cloud](https://cloud.scylladb.com/) is a managed NoSQL database as a service running [Scylla Enterprise](https://www.scylladb.com/product/scylla-enterprise/).
 
 It allows you to create real-time applications that run at global scale with the industry’s most performant NoSQL database, sparing your team from database administrative tasks. Scylla Cloud gives you access to fully managed Scylla clusters with automatic backup, repairs, performance optimization, security hardening, 24*7 maintenance, and support. All for a fraction of the cost of other DBaaS providers.
 
