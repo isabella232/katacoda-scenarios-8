@@ -16,5 +16,5 @@ Wait until the cluster is ready.
 
 Next, you’ll connect to it. Click on Connect.
 
-It’s also possible to use your own AWS account with Scylla Cloud using the Scylla Cloud Bring Your Own Account (BYOA) feature, learn more about it [here](https://docs.scylladb.com/scylla-cloud/cloud-setup/scylla-cloud-byoa/). 
+It’s also possible to use your AWS account with Scylla Cloud using the Scylla Cloud Bring Your Own Account (BYOA) feature, learn more about it [here](https://docs.scylladb.com/scylla-cloud/cloud-setup/scylla-cloud-byoa/). 
 
