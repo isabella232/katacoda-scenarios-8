@@ -6,7 +6,7 @@ It allows you to create real-time applications that run at global scale with the
 
 Currently, it’s available on Amazon Web Services (AWS). In this lab, you’ll learn how to get started with Scylla Cloud by creating a cluster, connecting to it, and running some basic queries. 
 
-This lab is part of [Scylla University](https://university.scylladb.com/)
+This lab is part of [Scylla University](https://university.scylladb.com/).
 
 
 

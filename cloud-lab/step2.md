@@ -3,14 +3,14 @@ After seeing how to connect to Scylla Cloud and create a Cluster, you’ll use t
 [CQL](https://university.scylladb.com/courses/data-modeling/lessons/basic-data-modeling-2/topic/cql-cqlsh-and-basic-cql-syntax/) is a query language that is used to interface with Scylla. It allows us to perform basic functions such as insert, update, select, delete, create, and so on.
 The CQL Shell is an interactive Command Line Interface to interact with the database. The connection is established to any one of the nodes, which is then designated as the coordinator node for that specific connection. The coordinator node manages the request path and the response back to the client.
 
-Keep in mind that most real-world applications use drivers to interact with the cluster, you can learn more about using Scylla Drivers in [this course](https://university.scylladb.com/courses/using-scylla-drivers/). 
+Keep in mind that most real-world applications use drivers to interact with the cluster. You can learn more about using Scylla Drivers in [this course](https://university.scylladb.com/courses/using-scylla-drivers/). 
 
 ![](https://university.scylladb.com/wp-content/uploads/2021/06/cluster_connect.png)
 
 
 ## Connect to the Cluster
 
-Copy the password and IP address from the instructions tab and run the following command with the password and IP address you copied::
+Copy the password and IP address from the instructions tab and run the following command with the password and IP address you copied:
 
 `docker run -it --rm --entrypoint cqlsh scylladb/scylla -u scylla -p *************** 44.193.147.54`{{copy}}
 
