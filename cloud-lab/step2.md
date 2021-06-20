@@ -10,7 +10,17 @@ Keep in mind that most real-world applications use drivers to interact with the 
 
 ## Connect to the Cluster
 
-Copy the password and IP address from the instructions tab and run the following command with the password and IP address you copied:
+To allow connections from the outside world to your newly create Scylla Cloud cluster, you’ll have to whitelist the public IP address of the Katacoda machine.
+To see the IP address type:
+
+`curl http://ipinfo.io`{{execute}}
+
+Now, copy the IP address and in the Scylla Cloud interface, under the General tab, and add that IP to the list of allowed IPs. 
+
+![](https://university.scylladb.com/wp-content/uploads/2021/06/Screenshot-from-2021-06-20-16-16-23.png)
+
+Now that the IP address of the Katacoda machine is whitelisted, we can connect to the cluster. Copy the password from the Instructions tab and run the following command with the password you copied:
+
 
 `docker run -it --rm --entrypoint cqlsh scylladb/scylla -u scylla -p *************** 44.193.147.54`{{copy}}
 
