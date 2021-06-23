@@ -10,7 +10,9 @@ Some common use cases for MV are Indexing with denormalization, different sort o
 In this lab, you’ll create a base table and different Materialized Views for that base table. You’ll execute updates to the base table and see what happens to the view. Additionally, you’ll learn how to query the MV.
 Start by creating a Docker container with Scylla.
 
-This lab is part of [Scylla University](https://university.scylladb.com/). You can learn more about MV in this [lesson/(https://university.scylladb.com/courses/data-modeling/lessons/materialized-views-secondary-indexes-and-filtering/).
+This lab is part of [Scylla University](https://university.scylladb.com/). You can learn more about MV in this [lesson](https://university.scylladb.com/courses/data-modeling/lessons/materialized-views-secondary-indexes-and-filtering/).
+
+
 
 
 
