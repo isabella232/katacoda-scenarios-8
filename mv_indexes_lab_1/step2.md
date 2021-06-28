@@ -26,7 +26,9 @@ The “WHERE city IS NOT NULL“ filter in the snippet above ensures that if a b
 `CREATE MATERIALIZED VIEW building_by_city AS
 SELECT * FROM buildings PRIMARY KEY(city, name);`{{execute}} 
 
-As expected, the new Materialized View looks like this:
+As expected, the above command fails. 
+
+Moving forward, the new Materialized View looks like this:
 
 `SELECT * FROM building_by_city;`{{execute}} 
 
@@ -46,3 +48,5 @@ Unsurprisingly, the new view contains the key columns (city and name), but the o
 Although internally each Materialized View is a separate table, a user is not allowed to modify a view directly:
 
 `DELETE FROM building_by_city WHERE city='Taipei';`{{execute}} 
+
+Unsurprisingly the above fails. 
