@@ -21,12 +21,13 @@ Therefore we will have (city, name) as the primary key of the new Materialized V
  
 As a rule in a Materialized View, all the components of the original primary key of the table MUST also appear in the Materialized View’s key. This is why we added the name into the view’s key in this example.
 
-The “WHERE city IS NOT NULL“ filter in the snippet above ensures that if a building includes a null value for the city, it will not be added to the view table because doing so would be illegal (a key component either partition or clustering key cannot be null). Adding this filter is mandatory. If you don’t, you will not be able to create the Materialized View:
+The “WHERE city IS NOT NULL“ filter in the snippet above ensures that if a building includes a null value for the city, it will not be added to the view table because doing so would be illegal (a key component either partition or clustering key cannot be null). Adding this filter is mandatory. 
+If you don’t, you will <strong>not</strong> be able to create the Materialized View:
 
 `CREATE MATERIALIZED VIEW building_by_city AS
 SELECT * FROM buildings PRIMARY KEY(city, name);`{{execute}} 
 
-As expected, the above command fails. 
+As expected, the above command <strong>fails</strong>. 
 
 Moving forward, the new Materialized View looks like this:
 
