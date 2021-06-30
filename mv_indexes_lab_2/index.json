@@ -1,18 +1,23 @@
 {
-  "title": "ScyllaDB: Materialized Views and Indexes Lab 1",
-  "description": "Create a base table and different Materialized Views (MV) for that base table, execute updates to the base table, and learn how to query the MV.",
+  "title": "ScyllaDB: Materialized Views and Indexes Lab 2",
+  "description": "Global and Local Secondary indexes in action, with example use cases and an explanation of when to use each.",
   "difficulty": "Intermediate",
-  "time": "16 minutes",
+  "time": "15 minutes",
   "details": {
     "steps": [
       {
-        "title": "Setting up the Environment",
+        "title": "Base Table",
         "text": "step1.md"
       },
       {
-        "title": "Creating the Materialized View",
+        "title": "Global Index",
         "text": "step2.md"
+      },
+      {
+        "title": "Local Index",
+        "text": "step3.md"
       }
+
     ],
     "intro": {
       "text": "intro.md"
