@@ -16,8 +16,11 @@
       {
         "title": "Local Index",
         "text": "step3.md"
+      },
+      {
+        "title": "Under the Hood",
+        "text": "step4.md"
       }
-
     ],
     "intro": {
       "text": "intro.md"

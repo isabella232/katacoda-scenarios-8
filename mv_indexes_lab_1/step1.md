@@ -19,9 +19,9 @@ The command “$(docker inspect –format='{{ .NetworkSettings.IPAddress }}’ N
  
 `docker run --name Node_Z -d scylladb/scylla:4.3.0 --overprovisioned 1 --smp 1 --seeds="$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' Node_X)"`{{execute}} 
 
-Wait a minute or so and check the node status: 
+Wait a minute or so and check the node status:
 
-`docker exec -it Node_X nodetool status`{{execute}}  
+`docker exec -it Node_X nodetool status`{{execute}}
 
 You’ll see that eventually, all the nodes have UN for status. U means up, and N means normal. If you get a message "nodetool: Unable to connect to Scylla API server: java.net.ConnectException: Connection refused (Connection refused)", it means you have to wait a bit more for the node to be up and responding. 
 

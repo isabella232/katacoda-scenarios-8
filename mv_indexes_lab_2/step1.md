@@ -7,7 +7,13 @@ In this step, you'll set up the environment by creating a one-node Scylla cluste
 
 Start by creating a Docker container with Scylla. This tutorial was created with version 4.3:
 
-`docker run --name scylla-si -d scylladb/scylla:4.3 --smp 2 --memory 4G`{{execute}}
+`docker run --name scylla-si -d scylladb/scylla:4.3.0 --overprovisioned 1 --smp 1`{{execute}}
+
+Wait a minute or so and check the node status:
+
+`docker exec -it scylla-si nodetool status`{{execute}}
+
+You’ll see that eventually, all the nodes have UN for status. U means up, and N means normal. If you get a message "nodetool: Unable to connect to Scylla API server: java.net.ConnectException: Connection refused (Connection refused)", it means you have to wait a bit more for the node to be up and responding. 
 
 Open 3 terminals (#1 for the base table, #2 for global index, #3 for local index
 
@@ -17,8 +23,7 @@ Switch to terminal #1, run the CQL Shell, and create a Keyspace:
 
 `cqlsh`{{execute}}
 
-`CREATE KEYSPACE restaurant_chain
-WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };`{{execute}}
+`CREATE KEYSPACE restaurant_chain WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };`{{execute}}
 
 Keep in mind that SimpleStrategy should not be used in production. Learn more about this in the Replication Factor [lesson](https://university.scylladb.com/courses/scylla-essentials-overview/lessons/architecture/topic/replication-strategy/).
 
