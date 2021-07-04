@@ -8,15 +8,15 @@ We will use sstabledump to converts the SSTable into a readable (JSON) file form
 
 ### BASE TABLE – On Terminal #1
 
-sstabledump menus-76bce980e9e711e9b4a6000000000001/mc-2-big-Data.db
+`sstabledump menus-76bce980e9e711e9b4a6000000000001/mc-2-big-Data.db`{{copy}}
 
 ### GLOBAL INDEX – On Terminal #2
 
-sstabledump menus_dish_type_idx_index-11248001e9e811e9b4a6000000000001/mc-2-big-Data.db
+`sstabledump menus_dish_type_idx_index-11248001e9e811e9b4a6000000000001/mc-2-big-Data.db`{{copy}}
 
 ### LOCAL INDEX – On Terminal #3
 
-sstabledump menus_dish_type_idx_1_index-bac41d51e9e811e9b4a6000000000001/mc-2-big-Data.db
+`sstabledump menus_dish_type_idx_1_index-bac41d51e9e811e9b4a6000000000001/mc-2-big-Data.db`{{copy}}
 
 If you’d like to further investigate what happens when using the above queries with secondary indexes, try turning [TRACING](https://docs.scylladb.com/using-scylla/tracing/) on and executing the queries again.
 
