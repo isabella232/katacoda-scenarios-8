@@ -13,12 +13,6 @@ However, this also means that finding a row using a non-partition key requires a
 
 Switch to terminal #2 and create a global index on column Dish_type, which we want to query by:
 
-`docker exec -ti scylla-si /bin/bash`{{execute}}
-
-`cqlsh`{{execute}}
-
-`USE restaurant_chain;`{{execute}}
-
 `CREATE INDEX ON menus(dish_type);`{{execute}}
 
 And we can see the created global index and the underlying Materialized View:
@@ -29,7 +23,7 @@ And now we can query based on the newly created index:
 
 `SELECT * FROM menus WHERE dish_type = 'Polish soup';`{{execute}}
 
-With the index created, we can execute the query without further issues and receive all entries that describe a Polish soup, from all locations.
+With the index created, we can execute the query without further issues and receive all entries that describe a Polish soup, from all cities.
 
 ![](https://university.scylladb.com/topic/materialized-views-and-secondary-indexes-hands-on-updated/global-sec-index-example/#main)
 
@@ -41,12 +35,4 @@ This is what happens when the query is executed:
 
 The index is global; underneath it stores base primary keys in a table, where the indexed column acts as a partition key. The key allows the index to scale properly. To avoid pitfalls, schema designers must remember that the same best practices for primary keys apply to secondary indexes columns, for example: avoid creating an index on a low cardinality column. Also, note that indexed data will be stored on a node that serves the partition key token of an indexed table. That node may not necessarily be the same node that stores base table data.
 
-As before, let’s take a look at the schema and sstables, we will use this later on:
 
-`exit`{{execute}}
-
-`nodetool flush`{{execute}}
-
-`cd /var/lib/scylla/data/restaurant_chain/`{{execute}}
-
-`ls -l */*`{{execute}}

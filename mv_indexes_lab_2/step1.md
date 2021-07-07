@@ -32,21 +32,21 @@ Next, create a Table and insert some data:
 `USE restaurant_chain;`{{execute}}
 
 `CREATE TABLE restaurant_chain.menus (
-location text,
+city text,
 name text,
 dish_type text,
 price float,
-PRIMARY KEY (location, name));`{{execute}}
+PRIMARY KEY (city, name));`{{execute}}
 
-```INSERT INTO menus (location, name, price, dish_type) VALUES ('Reykjavik', 'hakarl', 16, 'cold Icelandic starter');
-INSERT INTO menus (location, name, price, dish_type) VALUES ('Reykjavik', 'svid', 21, 'hot Icelandic main dish');
-INSERT INTO menus (location, name, price, dish_type) VALUES ('Warsaw', 'sour rye soup', 7, 'Polish soup');
-INSERT INTO menus (location, name, price, dish_type) VALUES ('Warsaw', 'sorrel soup', 5, 'Polish soup');
-INSERT INTO menus (location, name, price, dish_type) VALUES ('Cracow', 'beef tripe soup', 6, 'Polish soup');
-INSERT INTO menus (location, name, price, dish_type) VALUES ('Warsaw', 'pork jelly', 8, 'cold Polish starter');
-INSERT INTO menus (location, name, price, dish_type) VALUES ('Ho Chi Minh', 'bun mam', 8, 'Vietnamese soup');
-INSERT INTO menus (location, name, price, dish_type) VALUES ('Da Lat', 'banh mi', 5, 'Vietnamese breakfast');
-INSERT INTO menus (location, name, price, dish_type) VALUES ('Ho Chi Minh', 'goi cuon', 6, 'Vietnamese hot starter');```{{execute}}
+```INSERT INTO menus (city, name, price, dish_type) VALUES ('Reykjavik', 'hakarl', 16, 'cold Icelandic starter');
+INSERT INTO menus (city, name, price, dish_type) VALUES ('Reykjavik', 'svid', 21, 'hot Icelandic main dish');
+INSERT INTO menus (city, name, price, dish_type) VALUES ('Warsaw', 'sour rye soup', 7, 'Polish soup');
+INSERT INTO menus (city, name, price, dish_type) VALUES ('Warsaw', 'sorrel soup', 5, 'Polish soup');
+INSERT INTO menus (city, name, price, dish_type) VALUES ('Cracow', 'beef tripe soup', 6, 'Polish soup');
+INSERT INTO menus (city, name, price, dish_type) VALUES ('Warsaw', 'pork jelly', 8, 'cold Polish starter');
+INSERT INTO menus (city, name, price, dish_type) VALUES ('Ho Chi Minh', 'bun mam', 8, 'Vietnamese soup');
+INSERT INTO menus (city, name, price, dish_type) VALUES ('Da Lat', 'banh mi', 5, 'Vietnamese breakfast');
+INSERT INTO menus (city, name, price, dish_type) VALUES ('Ho Chi Minh', 'goi cuon', 6, 'Vietnamese hot starter');```{{execute}}
 
 Now let’s run some queries:
 
@@ -54,7 +54,7 @@ Now let’s run some queries:
 
 But wait! This is a full table scan. This could have been a problem if we didn’t have very little data. We should always restrict our queries using partition keys.
 
-`SELECT * FROM menus where location = 'Warsaw';`{{execute}}
+`SELECT * FROM menus where city = 'Warsaw';`{{execute}}
 
 If we had a lot of data this would perform very well.
 
@@ -66,24 +66,18 @@ Oops!
 
 How about other fields?
 
-`SELECT * from menus where location = 'Warsaw' and dish_type = 'Polish soup';`{{execute}}
+`SELECT * from menus where city = 'Warsaw' and dish_type = 'Polish soup';`{{execute}}
 
 We get the same error.
 
 If we add “ALLOW FILTERING” to the above queries they would work. But just like our first query, because we are querying regular columns it would be a full table scan – VERY INEFFICIENT!
 Indexes to the rescue!
 
-Let’s take a look at our current schema and sstables. It will help us compare and contrast and further our understanding, later on.
+Let’s take a look at our current schema.
 
 `DESC KEYSPACE restaurant_chain;`{{execute}}
 
-`exit`{{execute}}
 
-`nodetool flush`{{execute}}
-
-`cd /var/lib/scylla/data/restaurant_chain/`{{execute}}
-
-`ls -l */*`{{execute}}
 
 
 
