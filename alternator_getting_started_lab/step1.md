@@ -17,7 +17,7 @@ By default, Scylla does not listen to DynamoDB API requests. To enable such requ
 
 Alternator uses Scylla’s LWT feature. You can read more about it in the [documentation](https://docs.scylladb.com/using-scylla/lwt/).
 
-`docker run  --name some-scylla   --hostname some-scylla -p 8000:8000  -d scylladb/scylla:4.1.0    --smp 1 --memory=750M --overprovisioned 1 --alternator-port=8000`{{execute}}
+`docker run  --name some-scylla   --hostname some-scylla -p 8000:8000  -d scylladb/scylla:4.4.0    --smp 1 --memory=750M --overprovisioned 1 --alternator-port=8000`{{execute}}
 
 Wait a few seconds and make sure the cluster is up and running:
 
