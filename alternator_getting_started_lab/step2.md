@@ -1,4 +1,4 @@
-After seeing how to run a single Scylla instance in the last step, in this part, you will see how to run some basic queries using PYthon. 
+After seeing how to run a single Scylla instance in the last step, in this part, you will see how to run some basic queries using Python. 
 
 ## Create a Table and Run Queries
 
@@ -18,7 +18,7 @@ Also, in this example, you’ll send the queries directly to the single node. In
 
 Run the script: 
 
-`python create.py`{{execute}}
+`python3 create.py`{{execute}}
 
 Each Alternator table is stored in its own keyspace, which Scylla automatically creates. Table xyz will be in keyspace alternator_xyz. This keyspace is initialized when the first Alternator table is created (with a CreateTable request). The replication factor (RF) for this keyspace and all Alternator tables is chosen at that point, depending on the size of the cluster: RF=3 is used on clusters with three or more live nodes. RF=1 would is used if our cluster is smaller, as is in our case. Using a Scylla cluster of fewer than three nodes is not recommended for production. 
 
@@ -30,7 +30,7 @@ Notice that unlike Scylla (and Cassandra for that matter) in DynamoDB, Writes do
 
 Execute the script to write the two items to the table:
 
-`python write.py`{{execute}}
+`python3 write.py`{{execute}}
 
 Next, you’ll read the data that was just written, again using a batch operation, batch_get_item. 
 
@@ -40,6 +40,6 @@ The response is a dictionary with the result, the two entries previously written
 
 Execute the read to see the results:
 
-`python read.py`{{execute}}
+`python3 read.py`{{execute}}
 
 DynamoDB supports two consistency levels for reads, “eventual consistency” and “strong consistency.” You can learn more about Scylla consistency levels here and here. Under the hood, Scylla implements Strongly-consistent reads with LOCAL_QUORUM, while eventually-consistent reads are performed with LOCAL_ONE.
