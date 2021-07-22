@@ -17,7 +17,7 @@ By default, Scylla does not listen to DynamoDB API requests. To enable such requ
 
 Alternator uses Scylla’s LWT feature. You can read more about it in the [documentation](https://docs.scylladb.com/using-scylla/lwt/).
 
-`docker run  --name some-scylla --hostname some-scylla -p 8000:8000 -d scylladb/scylla:4.4.0 --smp 1 --overprovisioned 1 --alternator-port=8000`{{execute}}
+`docker run  --name some-scylla --hostname some-scylla -p 8000:8000 -d scylladb/scylla:4.4.0 --smp 1 --overprovisioned 1 --alternator-port=8000 --alternator-write-isolation=always`{{execute}}
 
 Wait a few seconds and make sure the cluster is up and running:
 
@@ -29,6 +29,12 @@ Next, if you don’t already have it set up, install boto3 python library which 
 
 `sudo pip install --upgrade boto3`{{execute}}
 
-In the three scripts create.py read.py and write.py change the value for “endpoint_url” to the IP address of the node. 
+In the three scripts create.py read.py and write.py change the value for “endpoint_url” to the IP address of the node. Copy the IP address from the output of the previously used "nodetool status" command, then edit the three files and replace the IP address:
+
+`vi create.py`{{execute}}
+
+`vi ready.py`{{execute}}
+
+`vi. write.py`{{execute}}
 
 
