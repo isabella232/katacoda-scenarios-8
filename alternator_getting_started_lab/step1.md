@@ -23,15 +23,6 @@ Wait a few seconds and make sure the cluster is up and running:
 
 `docker exec -it some-scylla nodetool status`{{execute}}
 
-<iframe 
-    width="100%"
-    height="350"    
-    src="data:text/html;charset=utf-8,
-    <head><base target='_blank' /></head>
-    <body><script src='https://gist.github.com/guy9/6fd547f77ebe3a86e4d7435f53b5bd42.js'></script>
-    </body>">
-    </iframe>
-
 In this example, you will use the Python language to interact with Scylla with the [Boto 3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) SDK for Python. It’s also possible to use the CLI or other languages such as Java, C#, Python, Perl, PHP, Ruby, Erlang, Javascript. 
 
 Next, if you don’t already have it set up, install boto3 python library which also contains drivers for DynamoDB:
@@ -42,7 +33,7 @@ In the three scripts create.py read.py and write.py change the value for “endp
 
 `scylla-code-samples/alternator/getting-started/create.py`{{open}}
 
-`scylla-code-samples/alternator/getting-started/ready.py`{{open}}
+`scylla-code-samples/alternator/getting-started/read.py`{{open}}
 
 `scylla-code-samples/alternator/getting-started/write.py`{{open}}
 
