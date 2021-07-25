@@ -23,9 +23,6 @@ Wait a few seconds and make sure the cluster is up and running:
 
 `docker exec -it some-scylla nodetool status`{{execute}}
 
-<script src="https://gist.github.com/guy9/6fd547f77ebe3a86e4d7435f53b5bd42.js"></script>
-
-
 In this example, you will use the Python language to interact with Scylla with the [Boto 3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) SDK for Python. It’s also possible to use the CLI or other languages such as Java, C#, Python, Perl, PHP, Ruby, Erlang, Javascript. 
 
 Next, if you don’t already have it set up, install boto3 python library which also contains drivers for DynamoDB:
@@ -34,10 +31,10 @@ Next, if you don’t already have it set up, install boto3 python library which 
 
 In the three scripts create.py read.py and write.py change the value for “endpoint_url” to the IP address of the node. Copy the IP address from the output of the previously used "nodetool status" command, then edit the three files and replace the IP address:
 
-`vi create.py`{{execute}}
+`create.py`{{open}}
 
-`vi ready.py`{{execute}}
+`ready.py`{{open}}
 
-`vi write.py`{{execute}}
+`write.py`{{open}}
 
 
