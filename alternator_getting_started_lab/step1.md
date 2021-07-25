@@ -30,6 +30,7 @@ Wait a few seconds and make sure the cluster is up and running:
     <head><base target='_blank' /></head>
     <body><script src='https://gist.github.com/guy9/6fd547f77ebe3a86e4d7435f53b5bd42.js'></script>
     </body>">
+    </iframe>
 
 In this example, you will use the Python language to interact with Scylla with the [Boto 3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) SDK for Python. It’s also possible to use the CLI or other languages such as Java, C#, Python, Perl, PHP, Ruby, Erlang, Javascript. 
 
