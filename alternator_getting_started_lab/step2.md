@@ -4,7 +4,7 @@ After seeing how to run a single Scylla instance in the last step, in this part,
 
 Next, you'll use the create.py script to create a table in our newly created cluster, using Alternator.
 
-<script src="https://gist.github.com/guy9/35db906be5273adbd541a41ff2aacbff.js"></script>
+Take a look at the create.py file. 
 
 Authorization is not in the scope of this lesson, so you’ll use ‘None’ and revisit this in a future lesson. 
 
@@ -24,6 +24,8 @@ Each Alternator table is stored in its own keyspace, which Scylla automatically 
 
 Next, you will write and read some data from the newly created table. 
 
+Take a look at the write.py file. 
+
 In this script, the batch_write_item operation is used to write data to the table “mutant_data.” This allows for writing multiple items in one operation. Here you write two items using a PutRequest, which is a request to perform the PutItem operation on an item. 
 
 Notice that unlike Scylla (and Cassandra for that matter) in DynamoDB, Writes do not have a configurable consistency level. They use CL=QUORUM. 
@@ -34,7 +36,7 @@ Execute the script to write the two items to the table:
 
 Next, you’ll read the data that was just written, again using a batch operation, batch_get_item. 
 
-<script src="https://gist.github.com/guy9/ac2eb96e8a1a3da01c3f357aa732117a.js"></script>
+Take a look at the read.py file. 
 
 The response is a dictionary with the result, the two entries previously written. 
 
