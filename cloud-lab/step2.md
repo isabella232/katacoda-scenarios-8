@@ -24,7 +24,7 @@ Now that the IP address of the Katacoda machine is whitelisted, we can connect t
 
 `docker run -it --rm --entrypoint cqlsh scylladb/scylla -u scylla -p *************** 44.193.147.54`{{copy}}
 
-Next, create a Keyspace called mykeyspace:
+Next, create a Keyspace called mykeyspace (notice that if you changed the AWS Region, you have to change the command accordingly):
 
 `CREATE KEYSPACE mykeyspace WITH replication = {'class': 'NetworkTopologyStrategy', 'AWS_US_EAST_1' : 3} AND durable_writes = true;`{{execute}}
 
