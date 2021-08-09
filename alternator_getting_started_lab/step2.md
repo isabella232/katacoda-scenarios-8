@@ -2,7 +2,7 @@ After seeing how to run a single Scylla instance in the last step, in this part,
 
 ## Create a Table and Run Queries
 
-Next, you'll use the create.py script to create a table in our newly created cluster, using Alternator.
+Next, using Alternator, you'll use the create.py script to create a table in our newly created cluster.
 
 Take a look at the create.py file. 
 
@@ -10,9 +10,9 @@ Authorization is not in the scope of this lesson, so you’ll use ‘None’ and
 
 Define a table called ‘mutant_data’ with the required properties such as the primary key “last_name” which is of a String data type. You can read about Boto 3 data types [here](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/customizations/dynamodb.html#valid-dynamodb-types). 
 
-The DynamoDB data model is similar to Scylla’s. Both databases have a partition key (also called “hash key” in DynamoDB) and an optional clustering key (called “sort key” or “range key” in DynamoDB), and the same notions of rows (which DynamoDB calls “items”) inside partitions. There are some differences in the data model. One of them is that in DynamoDB, columns (called “attributes”), other than the hash key and sort key, can be of any type, and can be different in each row. That means they don’t have to be defined in advance. You can learn more about data modeling in Alternator in more advanced lessons. 
+The DynamoDB data model is similar to Scylla’s. Both databases have a partition key (also called “hash key” in DynamoDB) and an optional clustering key (called “sort key” or “range key” in DynamoDB), and the same notions of rows (which DynamoDB calls “items”) inside partitions. There are some differences in the data model. One of them is that in DynamoDB, columns (called “attributes”), other than the hash key and sort key, can be of any type and can be different in each row. That means they don’t have to be defined in advance. You can learn more about data modeling in Alternator in more advanced lessons. 
 
-In this simple example, you'll use a one node Scylla cluster. In a production environment, it’s recommended to run a cluster of at least three nodes. 
+In this simple example, you'll use a one-node Scylla cluster. In a production environment, it’s recommended to run a cluster of at least three nodes. 
 
 Also, in this example, you’ll send the queries directly to the single node. In a production environment, you should use a mechanism to distribute different DynamoDB requests to different Scylla nodes, to balance the load. More about that in future lessons. 
 
@@ -28,7 +28,7 @@ Take a look at the write.py file.
 
 In this script, the batch_write_item operation is used to write data to the table “mutant_data.” This allows for writing multiple items in one operation. Here you write two items using a PutRequest, which is a request to perform the PutItem operation on an item. 
 
-Notice that unlike Scylla (and Cassandra for that matter) in DynamoDB, Writes do not have a configurable consistency level. They use CL=QUORUM. 
+Notice that unlike Scylla (and Cassandra, for that matter) in DynamoDB, Writes do not have a configurable consistency level. They use CL=QUORUM. 
 
 Execute the script to write the two items to the table:
 

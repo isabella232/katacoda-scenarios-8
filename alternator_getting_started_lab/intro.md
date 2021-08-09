@@ -1,6 +1,6 @@
 Alternator is an open-source [project](https://github.com/scylladb/scylla/blob/master/docs/alternator/alternator.md) that gives Scylla compatibility with Amazon DynamoDB.
 
-This lab starts with an introducing to the project. Afterward, you’ll create a one node Scylla cluster with Alternator enabled, and performng some basic operations on it, using Python. 
+This lab starts with an introduction to the project. Afterward, you’ll create a one-node Scylla cluster with Alternator enabled, and performing some basic operations on it, using Python. 
 
 ![](https://university.scylladb.com/wp-content/uploads/2021/07/800x400-blog-load-balancing-scylla-alternator.png)
 
