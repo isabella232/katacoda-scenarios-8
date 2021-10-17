@@ -19,7 +19,7 @@ Now, copy the IP address and in the Scylla Cloud interface, under the General ta
 
 ![](https://university.scylladb.com/wp-content/uploads/2021/06/Screenshot-from-2021-06-20-16-16-23.png)
 
-Since the Katacoda platform uses a dynamic list of public servers spread around the globe, the IP address of the machine we're connecting from might change. As a workaround add 0.0.0.0/0 to the Allowed IPs list. This effectively allows connection to the cluster from any machine.
+Since the Katacoda platform uses a dynamic list of public servers spread around the globe, the IP address of the machine we're connecting from might change. As a workaround add 0.0.0.0/32 to the Allowed IPs list. This effectively allows connection to the cluster from any machine.
 
 **Note that this is unsafe and that you should never do this is in a production system.** 
 
