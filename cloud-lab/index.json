@@ -2,6 +2,7 @@
   "title": "ScyllaDB: Getting Started with Scylla Cloud Lab",
   "description": "Connect to Scylla Cloud, create a cluster, connect to it and perform some basic queries.",
   "difficulty": "Beginner",
+  "private": "true",
   "time": "6 minutes",
   "details": {
     "steps": [
